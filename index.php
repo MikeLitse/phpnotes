@@ -23,6 +23,7 @@
         <a href="server.php">Server page</a>
         <a href="hashing.php">Hashing page</a>
         <a href="mysql.php">Mysql page</a>
+        <a href="login.php">Login page</a>
 
         <br>Username:<br>
         <input type="text" name="username">
