@@ -16,6 +16,7 @@
         <a href="cookie.php">Cookie page</a>
         <a href="session.php">Session page</a>
         <a href="home.php">This goes to the home page</a>
+        <a href="server.php">Server page</a>
 
         <br>Username:<br>
         <input type="text" name="username">
