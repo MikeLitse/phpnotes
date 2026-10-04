@@ -26,6 +26,7 @@
     }
     */
 
+    //checks the request method variable
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "Its post";
     }
