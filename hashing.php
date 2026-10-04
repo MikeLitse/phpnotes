@@ -7,6 +7,8 @@
 
     echo $hash . "<br>";
 
+    //password_verify(param,hash)
+    //checks a param with a hash to see if they are equal
     if(password_verify("MikeLitse",$hash)){
         echo "Correct password";
     }else{
