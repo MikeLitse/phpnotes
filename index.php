@@ -6,7 +6,7 @@
     <title>PHP LEARNING</title>
 </head>
 <body>
-    <form method="POST">
+    <form action= "index.php" method="POST">
         <input type="text" name="counter">
         <input type="submit" value="Loop it">
         <!-- This is how you get to another .php file-->
@@ -14,8 +14,16 @@
         <a href="functions.php">Functions page</a>
         <a href="validations.php">Validation page</a>
         <a href="cookie.php">Cookie page</a>
-    </form>
-   
+        <a href="session.php">Session page</a>
+        <a href="home.php">This goes to the home page</a>
+
+        <br>Username:<br>
+        <input type="text" name="username">
+        <br>Password:<br>
+        <input type="password" name="password"><br>
+        <input type="submit" value="login" name="login">
+
+    </form>   
 </body>
 </html>
 
@@ -52,7 +60,33 @@
         $counter--;
     }
 
-   
-    
-    
+    //starts the session
+    session_start();
+?>
+
+<?php
+    //session method to pass variables
+    $_SESSION["FirstName"] = "Michail";
+    $_SESSION["LastName"] = "Litseselidis";
+
+    echo $_SESSION["FirstName"] . "<br>";
+    echo $_SESSION["LastName"] . "<br>";
+
+    if(isset($_POST["login"])){
+        if(!empty($_POST["username"]) && !empty($_POST["password"])){
+            $_SESSION["username"] = filter_input(INPUT_POST,"username",
+                                    FILTER_SANITIZE_SPECIAL_CHARS);
+            $_SESSION["password"] = filter_input(INPUT_POST,"password",
+                                    FILTER_SANITIZE_SPECIAL_CHARS);
+            
+            echo $_SESSION["username"] . "<br>";
+            echo $_SESSION["password"] . "<br>";        
+
+            //redirects to home page
+            header("Location: home.php");
+
+        }else{
+            echo "Missing username/password";
+        }
+    }
 ?>
