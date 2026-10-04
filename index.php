@@ -13,6 +13,7 @@
         <a href="assοciative.php">Associative page</a>
         <a href="functions.php">Functions page</a>
         <a href="validations.php">Validation page</a>
+        <a href="cookie.php">Cookie page</a>
     </form>
    
 </body>
